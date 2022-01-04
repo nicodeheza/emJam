@@ -1,0 +1,169 @@
+.toolbarMainContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding: 10px 20px;
+}
+
+.toolsLabel{
+    margin-top: 10px;
+    font-style: italic;
+    white-space: nowrap;
+    font-size: 0.7rem;
+}
+@media(max-width: 700px){
+    .toolsLabel{
+        font-size: 0.7rem;
+    }
+    .toolbarMainContainer{
+        padding: 5px 20px;
+    }
+}
+.toolsContainer{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*settings*/
+.settingsBtnContainer button{
+    width: 5vw;
+    min-width: 30px;
+    max-width: 45px;
+    height: 5vw;
+    min-height: 30px;
+    max-height: 45px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.stAnimation{
+    animation-name: stRotate;
+    animation-duration: 1s;
+}
+@keyframes stRotate {
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}
+.settingsIcon{
+    stroke: var(--main-color);
+    stroke-width: 3px;
+}
+
+/*volumen*/
+.volumenContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+}
+.volumenIcon{
+    stroke: var(--main-color);
+    stroke-width: 3px;
+    width: 15%;
+}
+
+.rangeVolumenContainer{
+    width: 30vw;
+    min-width: 200px;
+    max-width: 300px;
+    display: flex;
+    align-items: center;
+    --input-width: 80%;
+    --input-height: 15px;
+}
+@media(max-width: 700px){
+    .rangeVolumenContainer{
+        --input-height: 12px;
+    } 
+}
+
+.rangeVolumenContainer input{
+    margin-right: 1vw;
+    -webkit-appearance: none;
+    background-color: black;
+    width: var(--input-width);
+}
+
+.rangeVolumenContainer input::-webkit-slider-runnable-track{
+    width: var(--input-width);
+    height: var(--input-height);
+    border: solid 3px var(--main-color);
+    border-radius: 10px;
+    background-color: black;
+    cursor: pointer;
+}
+
+.rangeVolumenContainer input::-moz-range-track{
+    width: var(--input-width);
+    height: var(--input-height);
+    border: solid 3px var(--main-color);
+    border-radius: 10px;
+    background-color: black;
+    cursor: pointer;
+}
+.rangeVolumenContainer input::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    border: solid 3px var(--main-color);
+    border-radius: 10px;
+    background-color: black;
+    width: calc(var(--input-height) * 2);
+    height: calc(var(--input-height) * 2);
+    cursor: pointer;
+    margin-top: calc(var(--input-height) * -0.70);
+}
+.rangeVolumenContainer input::-moz-range-thumb {
+    -webkit-appearance: none;
+    border: solid 3px var(--main-color);
+    border-radius: 10px;
+    background-color: black;
+    width: calc(var(--input-height) * 1.76);
+    height: calc(var(--input-height) * 1.76);
+    cursor: pointer;
+    margin-top: calc(var(--input-height) * -0.5);
+}
+
+/*users*/
+.userIcon{
+    fill: var(--main-color);
+    height: 4vw;
+    max-height: 35px;
+}
+.connectedUsersContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.connectedUsersContainer p{
+    margin-left: 15px;
+    font-size: 1.5rem;
+    font-weight: lighter;
+    font-style: italic;
+}
+
+/*instruments*/
+
+.pianoIcon {
+    fill: var(--main-color);
+    width: 8vw;
+    max-width: 80px;
+    min-width: 30px;
+    margin-right: calc( 10vw / 4);
+    cursor: pointer;
+}
+.drumsIcon{
+    fill: var(--main-color);
+    width: 7vw;
+    max-width: 60px;
+    min-width: 30px;
+    cursor: pointer;
+}
+.instrumentOff{
+    fill: var(--main-dark-color);
+}
+.instrumentBtn{
+    background-color: black;
+    border: none;
+    width: fit-content;
+}

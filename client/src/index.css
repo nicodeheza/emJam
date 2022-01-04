@@ -1,0 +1,17 @@
+:root{
+  --main-color:#9d5fff;
+  --main-dark-color: #511e7c;
+}
+*{
+  margin: 0px;
+  padding: 0px;
+  color: var(--main-color);
+  font-family: 'Roboto', sans-serif;
+}
+*:focus{
+  outline: none;
+}
+body{
+  background-color: black;
+  overflow: hidden;
+}

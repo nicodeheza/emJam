@@ -1,0 +1,110 @@
+.settingsMainContainer{
+    position: relative;
+    height: 100%;
+    width: fit-content;
+}
+
+.settingFlexContainer{
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    --instrument-input-width: 150px;
+    --instrument-input-height: 10px;
+
+    padding: 10px;
+
+    border: solid var(--main-color) 3px;
+    border-radius: 20px;
+
+    padding-top: 10px;
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    writing-mode: vertical-lr;
+    
+    height: fit-content;
+}
+
+@media(max-width:700px){
+    .settingFlexContainer{
+        --instrument-input-width: 110px;
+    }
+}
+
+.settingFlexContainer h5, .settingFlexContainer label{
+    font-weight: lighter;
+    font-style: italic;
+}
+
+.sliderCategory{
+    margin: 0 6px;
+    writing-mode: horizontal-tb;
+}
+
+.waveIcon{
+    stroke: var(--main-color);
+    stroke-width: 2px;
+    width: 80px;
+}
+.instrumentVolIcon{
+    stroke: var(--main-color);
+    width: 30px;
+    stroke-width: 3px;
+}
+
+.sliderContainer{
+    margin-bottom: 15px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.settingFlexContainer input{
+    -webkit-appearance: none;
+    background-color: black;
+    width: var(--instrument-input-width);
+    margin-right: 10px;
+}
+
+.settingFlexContainer input::-webkit-slider-runnable-track{
+    width: var(--instrument-input-width);
+    height: var(--instrument-input-height);
+    border: solid 2px var(--main-color);
+    border-radius: 10px;
+    background-color: black;
+    cursor: pointer;
+}
+
+.settingFlexContainer input::-moz-range-track{
+    width: var(--instrument-input-width);
+    height: var(--instrument-input-height);
+    border: solid 2px var(--main-color);
+    border-radius: 10px;
+    background-color: black;
+    cursor: pointer;
+}
+.settingFlexContainer input::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    border: solid 2px var(--main-color);
+    border-radius: 7px;
+    background-color: black;
+    width: calc(var(--instrument-input-height) * 2);
+    height: calc(var(--instrument-input-height) * 2);
+    cursor: pointer;
+    margin-top: calc(var(--instrument-input-height) * -0.70);
+}
+.settingFlexContainer input::-moz-range-thumb {
+    -webkit-appearance: none;
+    border: solid 2px var(--main-color);
+    border-radius: 7px;
+    background-color: black;
+    width: calc(var(--instrument-input-height) * 1.76);
+    height: calc(var(--instrument-input-height) * 1.76);
+    cursor: pointer;
+    margin-top: calc(var(--instrument-input-height) * -0.5);
+}
