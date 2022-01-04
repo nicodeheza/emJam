@@ -5,24 +5,22 @@ import {Provider} from "react-redux";
 import generateStore from "./redux/store";
 
 function App() {
-  const store= generateStore();
+	const store = generateStore();
 
-  return (
-
-    <Router>
-      <Switch>
-        <Route path="/chat">
-          <Provider store={store}>
-            <Chat />
-          </Provider>
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
-    </Router>
-    
-  );
+	return (
+		<Router>
+			<Switch>
+				<Route path="/chat">
+					<Provider store={store}>
+						<Chat />
+					</Provider>
+				</Route>
+				<Route path="/">
+					<Home />
+				</Route>
+			</Switch>
+		</Router>
+	);
 }
 
 export default App;
