@@ -2,6 +2,7 @@ import {useCallback, useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {CONNECTED} from "../connectionConst";
 import {deleteDrum, playDrum, playNotes, stopNote} from "../redux/actions/noteActions";
+import {isTouch} from "../redux/actions/touchActions";
 import "./pianoKey.css";
 
 export default function PianoKey({
@@ -15,6 +16,7 @@ export default function PianoKey({
 	const [pressed, setPressed] = useState(false);
 	const [mouseP, setMouseP] = useState(false);
 	const [notePlaying, setNotePlaying] = useState(false);
+	const isTouchState = useSelector((s) => s.isTouch);
 
 	const keyIndex = i + 1;
 
@@ -191,10 +193,15 @@ export default function PianoKey({
 					? {backgroundColor: "#abd3ff"}
 					: {}
 			}
-			onTouchStart={() => mouseDown()}
+			onTouchStart={() => {
+				if (!isTouchState) {
+					dispatch(isTouch());
+				}
+				mouseDown();
+			}}
 			onTouchEnd={() => mouseUp()}
-			onMouseDown={() => mouseDown()}
-			onMouseUp={() => mouseUp()}
+			onMouseDown={() => (!isTouchState ? mouseDown() : null)}
+			onMouseUp={() => (!isTouchState ? mouseUp() : null)}
 			onMouseLeave={() => mouseLeave()}
 		>
 			{i % 12 === 0 ? <span className="eighth">C{i / 12 + 1}</span> : null}

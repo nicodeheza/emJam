@@ -14,3 +14,4 @@ export const DELETE_WAVE = "DELETE_WAVE";
 export const CREATE_DRUMS_BUFFERS = "CREATE_DRUMS_BUFFERS";
 export const RESET_CHAT = "RESET_CHAT";
 export const RESET_WAVES = "RESET_WAVES";
+export const IS_TOUCH = "IS_TOUCH";

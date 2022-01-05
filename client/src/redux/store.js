@@ -5,13 +5,15 @@ import noteReducer from "./reducers/noteReducer";
 import waveReducer from "./reducers/waveReducer";
 import chatReducer from "./reducers/chatReducer";
 import drumsBufferReducer from "./reducers/drumsBufferReducer";
+import touchReducer from "./reducers/touchReducer";
 
 const rootReducer = combineReducers({
 	audioCtx: audioContextReducer,
 	waves: waveReducer,
 	notes: noteReducer,
 	chat: chatReducer,
-	drumsBuffer: drumsBufferReducer
+	drumsBuffer: drumsBufferReducer,
+	isTouch: touchReducer
 });
 
 export default function generateStore() {
