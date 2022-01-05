@@ -3,8 +3,8 @@ services:
   node-app:
     build: ./server
     restart: unless-stopped
-    expose:
-      - "8080"
+    ports:
+      - "8080:8080"
   nginx:
     image: nginx:stable-alpine
     volumes:
