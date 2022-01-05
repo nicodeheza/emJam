@@ -41,12 +41,12 @@ volumes:
       type: none
       device: /home/ubuntu/emJam/client/build/
       o: bind
+  dhparam:
+    driver: local
+    driver_opts:
+      type: none
+      device: /home/ubuntu/emJam/dhparam/
+      o: bind
 networks:
   app-network:
     driver: bridge
-dhparam:
-  driver: local
-  driver_opts:
-    type: none
-    device: /home/ubuntu/emJam/dhparam/
-    o: bind
