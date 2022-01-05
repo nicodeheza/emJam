@@ -1,9 +1,16 @@
+import {createServer} from "https";
+import {readFileSync} from "fs";
 const WebSocket = require("ws");
 const {v4: uuidv4} = require("uuid");
 
 const {WebSocketServer} = WebSocket;
 
-const wss = new WebSocketServer({port: 8080});
+const server = createServer({
+	cert: readFileSync("/etc/letsencrypt/live/emjam.nicolasdeheza.com/fullchain.pem"),
+	key: readFileSync("/etc/letsencrypt/live/emjam.nicolasdeheza.com/privkey.pem")
+});
+
+const wss = new WebSocketServer({server});
 
 const rooms = {};
 
@@ -91,3 +98,5 @@ wss.on("connection", (ws) => {
 		});
 	});
 });
+
+server.listen(8080);

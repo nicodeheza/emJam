@@ -1,4 +1,11 @@
 {
 	"cSpell.ignoreWords": ["uuidv"],
-	"cSpell.words": ["consts", "emjam", "nicolasdeheza"]
+	"cSpell.words": [
+		"consts",
+		"emjam",
+		"fullchain",
+		"letsencrypt",
+		"nicolasdeheza",
+		"privkey"
+	]
 }
