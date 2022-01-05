@@ -1,9 +1,11 @@
-import {createServer} from "https";
-import {readFileSync} from "fs";
+const https = require("https");
+const fs = require("fs");
 const WebSocket = require("ws");
 const {v4: uuidv4} = require("uuid");
 
 const {WebSocketServer} = WebSocket;
+const {createServer} = https;
+const {readFileSync} = fs;
 
 const server = createServer({
 	cert: readFileSync("/etc/letsencrypt/live/emjam.nicolasdeheza.com/fullchain.pem"),
