@@ -191,6 +191,8 @@ export default function PianoKey({
 					? {backgroundColor: "#abd3ff"}
 					: {}
 			}
+			onTouchStart={() => mouseDown()}
+			onTouchEnd={() => mouseUp()}
 			onMouseDown={() => mouseDown()}
 			onMouseUp={() => mouseUp()}
 			onMouseLeave={() => mouseLeave()}
