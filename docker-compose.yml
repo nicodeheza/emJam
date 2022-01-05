@@ -10,8 +10,22 @@ services:
     volumes:
       - ./client/build:/usr/share/nginx/html:ro
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - certbot-etc:/etc/letsencrypt
+      - certbot-var:/var/lib/letsencrypt
     ports:
       - "80:80"
     restart: unless-stopped
     depends_on:
       - node-app
+  certbot:
+    image: certbot/certbot
+    volumes:
+      - certbot-etc:/etc/letsencrypt
+      - certbot-var:/var/lib/letsencrypt
+      - ./client/build:/var/www/html:ro
+    depends_on:
+      - nginx
+    command: certonly --webroot --webroot-path=/var/www/html --email nicolasdeheza@hotmail.com --agree-tos --no-eff-email --staging -d emjam.nicolasdeheza.com
+volumes:
+  certbot-etc:
+  certbot-var:
