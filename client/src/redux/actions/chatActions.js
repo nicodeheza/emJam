@@ -9,7 +9,7 @@ import {
 } from "../consts";
 
 export const connect = () => (dispatch, getState) => {
-	const ws = new WebSocket("ws://emjam.nicolasdeheza.com:8080");
+	const ws = new WebSocket("ws://emjam.nicolasdeheza.com/ws");
 
 	dispatch({
 		type: CONNECT,
