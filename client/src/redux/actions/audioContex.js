@@ -3,6 +3,7 @@ const AudioContext = window.AudioContext || window.webkitAudioContext;
 
 export const createAudioContext = () => (dispatch) => {
 	const audioCtx = new AudioContext();
+	audioCtx.resume();
 	console.log(audioCtx);
 	dispatch({
 		type: CREATE_AUDIO_CONTEXT,
