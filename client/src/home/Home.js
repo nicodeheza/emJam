@@ -1,8 +1,15 @@
 import StartIcon from "../svg/StartIcon";
 import "./home.css";
-import {Link} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {createAudioContext} from "../redux/actions/audioContex";
 
 export default function Home() {
+	const dispatch = useDispatch();
+
+	function click() {
+		dispatch(createAudioContext());
+		//setStart(true);
+	}
 	return (
 		<div className="HomeMainContainer">
 			<header className="homeHeader">
@@ -18,13 +25,15 @@ export default function Home() {
 					</li>
 					<li>Enjoy with the interactive visuals</li>
 				</ul>
-				<button>
-					<Link to="/chat">
-						<div className="startContainer">
-							<StartIcon classN={"startIcon"} />
-						</div>
-						<span>START</span>
-					</Link>
+				<button
+					onClick={() => click()}
+					onTouchEnd={() => click()}
+					onTouchStart={() => click()}
+				>
+					<div className="startContainer">
+						<StartIcon classN={"startIcon"} />
+					</div>
+					<span>START</span>
 				</button>
 				<p className="homeMessage">
 					Please put your device in landscape position for a better experience

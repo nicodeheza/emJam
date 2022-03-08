@@ -1,25 +1,15 @@
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import Chat from "./chat/Chat";
-import Home from "./home/Home";
+//import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import {Provider} from "react-redux";
 import generateStore from "./redux/store";
+import Handler from "./Handler";
 
 function App() {
 	const store = generateStore();
 
 	return (
-		<Router>
-			<Switch>
-				<Route path="/chat">
-					<Provider store={store}>
-						<Chat />
-					</Provider>
-				</Route>
-				<Route path="/">
-					<Home />
-				</Route>
-			</Switch>
-		</Router>
+		<Provider store={store}>
+			<Handler />
+		</Provider>
 	);
 }
 

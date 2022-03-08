@@ -1,6 +1,6 @@
 import {useCallback, useEffect, useState} from "react";
 import {
-	createAudioContext,
+	//createAudioContext,
 	createMainGain,
 	updateMasterGain
 } from "../redux/actions/audioContex";
@@ -94,7 +94,7 @@ export default function Chat() {
 	// },[keysPressed]);
 
 	useEffect(() => {
-		dispatch(createAudioContext());
+		// dispatch(createAudioContext());
 		dispatch(createMainGain());
 		dispatch(createWave("local"));
 		dispatch(createDrumsBuffer(drumsFilesNames, keyMap.length));

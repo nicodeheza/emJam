@@ -11,8 +11,17 @@ export const createDrumsBuffer =
 				const fileDir = `drumsSamples/${name}.wav`;
 				const res = await fetch(fileDir);
 				const soundBuffer = await res.arrayBuffer();
-				const dBuffer = await audioCtx.decodeAudioData(soundBuffer);
-				buffers.push(dBuffer);
+				// const dBuffer = await audioCtx.decodeAudioData(soundBuffer);
+				audioCtx.decodeAudioData(
+					soundBuffer,
+					(b) => {
+						buffers.push(b);
+					},
+					(err) => {
+						console.log(err);
+					}
+				);
+				//buffers.push(dBuffer);
 			}
 
 			dispatch({
