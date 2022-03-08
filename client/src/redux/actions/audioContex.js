@@ -4,7 +4,6 @@ const AudioContext = window.AudioContext || window.webkitAudioContext;
 export const createAudioContext = () => (dispatch) => {
 	const audioCtx = new AudioContext();
 	audioCtx.resume();
-	console.log(audioCtx);
 	dispatch({
 		type: CREATE_AUDIO_CONTEXT,
 		payload: audioCtx
@@ -13,7 +12,6 @@ export const createAudioContext = () => (dispatch) => {
 
 export const createMainGain = () => (dispatch, getState) => {
 	const {audioCtx} = getState().audioCtx;
-	console.log(audioCtx);
 	const masterGain = audioCtx.createGain();
 	masterGain.connect(audioCtx.destination);
 	dispatch({
